@@ -1,25 +1,21 @@
-const seedCategories = require('./category-seeds');
-const seedProducts = require('./product-seeds');
-const seedTags = require('./tag-seeds');
-const seedProductTags = require('./product-tag-seeds');
+const seedUser = require('./user-seeds');
+// const seedBlogPost = require('./blogpost-seeds');
+// const seedComments = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
-  await seedCategories();
-  console.log('\n----- CATEGORIES SEEDED -----\n');
+  await seedUser();
+  console.log('\n----- USERS SEEDED -----\n');
 
-  await seedProducts();
-  console.log('\n----- PRODUCTS SEEDED -----\n');
+  // await seedBlogPost();
+  // console.log('\n----- BLOGPOSTS SEEDED -----\n');
 
-  await seedTags();
-  console.log('\n----- TAGS SEEDED -----\n');
-
-  await seedProductTags();
-  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
-
+  // await seedComments();
+  // console.log('\n----- COMMENTS SEEDED -----\n');
+  
   process.exit(0);
 };
 

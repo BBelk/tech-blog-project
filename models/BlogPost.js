@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
 
-class ProductTag extends Model {}
+class BlogPost extends Model {}
 
-ProductTag.init(
+BlogPost.init(
   {
     // define columns
     id: {
@@ -13,18 +12,23 @@ ProductTag.init(
       allowNull: false,
       autoIncrement: true
     },
-    product_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'product',
-        key: 'id'
-      }
+    bp_title: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
-    tag_id: {
+    bp_body: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    bp_time_made: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'tag',
-        key: 'id',
+        model: 'user',
+        key: 'id'
       }
     }
   },
@@ -33,8 +37,8 @@ ProductTag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product_tag',
+    modelName: 'blogpost',
   }
 );
 
-module.exports = ProductTag;
+module.exports = BlogPost;
