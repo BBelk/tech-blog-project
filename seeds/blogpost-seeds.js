@@ -1,24 +1,26 @@
 const { BlogPost } = require('../models');
 
-const userData = [
+const blogpostData = [
   {
-    username: 'BruceBelk',
-    email: 'belkbh@gmail.com',
-    password: 'Guillermo999',
+    bp_title: 'Title Text is right here',
+    bp_body: 'This will be the body text. Lorem ipsum and all that',
+    bp_time_made: 123,
+    user_id: 1,
   },
   {
-    username: 'KatJacks',
-    email: 'klj34@gmail.com',
-    password: 'Margie2020',
+    bp_title: 'This is the second post',
+    bp_body: 'Even more body text, the second time',
+    bp_time_made: 345,
+    user_id: 1,
   },
   {
-    username: 'SteveyBoy',
-    email: 'satan@gmail.com',
-    password: 'KILL12345',
+    bp_title: 'This is the third',
+    bp_body: 'That right, the third. What are you going to do about it?',
+    bp_time_made: 456,
+    user_id: 2,
   },
-  
 ];
 
-const seedCategories = () => User.bulkCreate(userData);
+const seedCategories = () => BlogPost.bulkCreate(blogpostData);
 
 module.exports = seedCategories;
