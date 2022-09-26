@@ -17,8 +17,9 @@ Comment.init(
         allowNull: false
     },
     c_time_made: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull:false,
     },
     user_id: {
       type: DataTypes.INTEGER,

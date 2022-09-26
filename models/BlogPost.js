@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class BlogPost extends Model {}
 
+// set up fields and rules for Product model
 BlogPost.init(
   {
     // define columns
@@ -21,8 +22,9 @@ BlogPost.init(
         allowNull: false
     },
     bp_time_made: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,

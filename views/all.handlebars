@@ -5,18 +5,19 @@
     </h2>
   </div>
   <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+    {{user.password}}
   {{#each dishes as |dish|}}
     <div class="dish col-md-5">
       <!-- We use dish.id instead of <od> and <li> elements. -->
       <p>
-        {{dish.id}}.
-        {{dish.dish_name}}
-        {{#if dish.has_nuts}}
+        {{dish.id}}
+        {{dish.username}}
+        {{!-- {{#if dish.has_nuts}}
           <h4>CONTAINS NUTS</h4>
         {{/if}}
         {{#unless dish.has_nuts}}
           <h5>NO NUTS</h5>
-        {{/unless}}
+        {{/unless}} --}}
       </p>
     </div>
     <div class="col-md-7">
